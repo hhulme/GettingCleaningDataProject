@@ -94,7 +94,7 @@ print("...done.")
 
 print("Merging data...")
 
-#copy the original data without changing it
+#copy the original data without changing the original variable
 modified_xtest = raw_xtest
 modified_xtrain = raw_xtrain
 #add the column names
@@ -173,9 +173,12 @@ tidy_dataset_2<-cbind(colnames(transpose_of_what_we_want), t(transpose_of_what_w
 
 
 # 6. Write the tidy data sets from steps 4 and 5 to files
-
-write.table(reordered_data, file="tidy_dataset_1.txt")
-write.table(tidy_dataset_2, file="tidy_dataset_2.txt")
+#uncomment to write this file
+#write.table(reordered_data, file="tidy_dataset_1.txt")
+write.table(tidy_dataset_2, file="tidy_dataset_2.txt", row.name=FALSE)
 
 
 # 7. Provide code to show how to load the tidy data files from files into R
+#uncomment to read this file
+#tds1<-read.table("tidy_dataset_1.txt")
+tds2<-read.table("tidy_dataset_2.txt")
